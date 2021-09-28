@@ -16,15 +16,15 @@ def do_test(name):
     print("Doing test for: " + name)
     source_file = fu.get_file_name("test-data/data-owner/basic/"+name+"/"+name+".csv")
     secret_file = fu.get_file_name("test-data/data-owner/basic/"+name+"/secret-file.txt")
-    schema_dir = fu.get_file_name("test-data/schemas/default-schema")
     output_dir = fu.get_file_name("test-data/data-owner/basic/"+name+"/out")
+    schema_dir = fu.get_file_name("test-data/data-owner/basic/basic-schema")
     output_zip = name+".zip"
     args = {
         "sourcefile": source_file,
         "secretfile": secret_file,
         "outputdir":  output_dir,
-        "outputzip": output_zip,
-        "schemadir": schema_dir
+        "schemadir": schema_dir,
+        "outputzip": output_zip
     }
     args = SimpleNamespace(**args)
     print(args)
