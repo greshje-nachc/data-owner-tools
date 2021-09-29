@@ -19,10 +19,16 @@ def get_file_test():
 
 
 def get_dirs_test():
-    file_name = fu.get_file_name("test-data/data-owner/basic")
+    file_name = fu.get_file_name(".")
     path = Path(file_name).resolve()
     dirs = fu.get_dirs(path)
     print(dirs)
+
+
+def get_files_test():
+    file_name = fu.get_file_name("test-data/data-owner/basic")
+    path = Path(file_name).resolve()
+
 
 
 def main():
