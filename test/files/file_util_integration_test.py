@@ -1,4 +1,7 @@
+import os
+
 import definitions
+from pathlib import Path
 import util.file.file_util as fu
 
 
@@ -15,9 +18,17 @@ def get_file_test():
     print("Done.\n")
 
 
+def get_dirs_test():
+    file_name = fu.get_file_name("test-data/data-owner/basic")
+    path = Path(file_name).resolve()
+    dirs = fu.get_dirs(path)
+    print(dirs)
+
+
 def main():
     get_project_root_test()
     get_file_test()
+    get_dirs_test()
 
 
 if __name__ == "__main__":
