@@ -30,11 +30,24 @@ def get_files_test():
     path = Path(file_name).resolve()
 
 
+def get_file_suffix_test():
+    file_name = "foo.bar"
+    file_suffix = fu.get_file_suffix(file_name)
+    print("File suffix is: " + file_suffix)
+
+
+def get_file_prefix_test():
+    file_name = "foo.bar"
+    file_prefix = fu.get_file_prefix(file_name)
+    print("File suffix is: " + file_prefix)
+
 
 def main():
     get_project_root_test()
     get_file_test()
     get_dirs_test()
+    get_file_suffix_test()
+    get_file_prefix_test()
 
 
 if __name__ == "__main__":

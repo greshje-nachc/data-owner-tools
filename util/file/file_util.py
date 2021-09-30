@@ -3,14 +3,41 @@ import definitions
 from pathlib import Path
 
 
+# ---
+#
+# FILE METHODS
+#
+# ---
+
+# Method to get a file for the given path based on the root directory of the project
 def get_file_name(rel_path):
     return str(Path(definitions.ROOT_DIR, rel_path).resolve())
 
 
-def is_true(foo):
-    return True
+# Method to get a file name from a full path
+def get_file_name_from_path(full_path):
+    return os.path.basename(full_path)
 
 
+# Method to get just the suffix of a file.
+def get_file_suffix(file_name):
+    rtn = os.path.splitext(file_name)[1]
+    rtn = rtn.replace(".", "", 1)
+    return rtn
+
+
+# Method to get the name of a file without the suffix.
+def get_file_prefix(file_name):
+    return os.path.splitext(file_name)[0]
+
+
+# ---
+#
+# DIRECTORY METHODS
+#
+# ---
+
+# Method to get all of the directories for the given path.
 def get_dirs(path):
     files = os.listdir(path)
     rtn = []
@@ -21,6 +48,7 @@ def get_dirs(path):
     return rtn
 
 
+# Method to get all of the files in the given path.
 def get_files(path):
     files = os.listdir(path)
     rtn = []
@@ -30,4 +58,8 @@ def get_files(path):
             rtn.append(cur)
     return rtn
 
+
+# Method to create a directory if it does not exist
+def mkdirs(path):
+    os.mkdirs(path)
 
