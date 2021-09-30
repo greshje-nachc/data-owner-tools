@@ -14,7 +14,7 @@ def main():
     schema_dir = os.path.join(str(ROOT_DIR), "schema")
     files = fu.get_files(csv_dir)
     for source_file in files:
-        source_file_name = fu.get_file_name_from_path(source_file)
+        source_file_name = fu.get_file_prefix(source_file)
         print("Running test for: " + source_file + " (" + source_file_name + ")")
         # gu.do_garble(source_file, secret_file, output_dir, schema_dir, output_zip)
     print("Done.")
