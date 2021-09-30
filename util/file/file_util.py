@@ -1,4 +1,5 @@
 import os
+import shutil
 import definitions
 from pathlib import Path
 
@@ -28,7 +29,9 @@ def get_file_suffix(file_name):
 
 # Method to get the name of a file without the suffix.
 def get_file_prefix(file_name):
-    return os.path.splitext(file_name)[0]
+    rtn = get_file_name_from_path(file_name)
+    rtn = os.path.splitext(rtn)[0]
+    return rtn
 
 
 # ---
@@ -61,5 +64,11 @@ def get_files(path):
 
 # Method to create a directory if it does not exist
 def mkdirs(path):
-    os.mkdirs(path)
+    os.mkdir(path)
+
+
+# Delete a directory
+def rmdir(path):
+    if os.path.exists(path):
+        shutil.rmtree(path)
 
