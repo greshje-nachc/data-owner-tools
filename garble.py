@@ -9,6 +9,7 @@ import sys
 from zipfile import ZipFile
 from anonlinkclient import cli
 
+
 def parse_arguments():
     parser = argparse.ArgumentParser(
         description="Tool for garbling PII in for PPRL purposes in the CODI project"
